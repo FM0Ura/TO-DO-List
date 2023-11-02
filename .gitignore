@@ -339,7 +339,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+mysite/mysite/secret.json
 env/
 venv/
 ENV/
@@ -426,4 +426,9 @@ cython_debug/
 
 # Android studio 3.1+ serialized cache file
 
-teste.py
+secret.py
+*.pyc
+__pycache__
+/env
+*.env
+.vscode
