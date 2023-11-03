@@ -91,20 +91,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': "to_do_list_db",
-#         'USER': "to_do_list_manager",
-#         'PASSWORD': "first project with django to do list",
-#         'HOST': "localhost",
-#         'PORT': "5432",
-#         'OPTIONS': {
-#             'client_encoding': 'UTF8',
-#         },
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
