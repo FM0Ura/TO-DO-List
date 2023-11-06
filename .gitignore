@@ -339,7 +339,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-mysite/mysite/secret.json
+todolist/todolist/secret.json
 env/
 venv/
 ENV/

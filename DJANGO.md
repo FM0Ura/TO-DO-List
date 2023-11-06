@@ -165,4 +165,6 @@ python manage.py migrate
 
 **MIGRATE** is a command that submits our table to the database server.
 
+## asd
+
 🧐❗💥💥TO BE CONTINUED💥💥❗🧐
