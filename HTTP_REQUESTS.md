@@ -1,8 +1,8 @@
-# HTTP Requests
+# HTTP Requests (Requisições HTTP)
 
-## What is HTTP?
+## O que é HTTP?
 
-HTTP, the acronym for HyperText Transfer Protocol, é o principal protocolo de comunição de computadores
+HTTP, é o acrônimo para HyperText Transfer Protocol, sendo esse o principal protocolo de comunição de computadores
 
 Essa comunicação entre os dispositivos é feita de acordo com o modelo de **REQUEST** e **RESPONSE**. Especificamente as respostas de transferência acontecem usando TCP (Transmission Control Protocol).
 

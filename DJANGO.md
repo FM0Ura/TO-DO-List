@@ -2,6 +2,57 @@
 
 In this file, I'll be writing all the steps I used to set up the settings of this project.
 
+## Django Map
+
+Before we dive into coding, it's crucial to grasp how Django operates.
+
+First and foremost, when you say "I'll use Django", you're essentially saying that you're going to work with Python. So, if you already have a grasp of Python's fundamentals, including data structures and flow control, you're off to a great start.
+
+To initialize your coding you're going to create a project with Django, inside this project you create an APP, and based on this app you create your website.
+
+P.S: A website can have more than one App!
+
+![Alt text](./markdown_imgs/full_map.png)
+
+### Project Details
+
+When you create a project with Django same default structures will be generated, inside this basic structure, there is a file named `settings.py`. When we edit this file we are editing your project settings. In there, we can change database configs, language configs, etc...
+
+After generating the basic structure, we need to create an APP, but to associate the APP to the project we use `settings.py`.
+
+### App Details
+
+Creating an APP will generate a folder with the name you provided for the APP. Inside this folder, there are some files:
+
+- `views.py`, which is responsible for all the logic of what will be displayed to the user.
+- `urls.py`, which is responsible for creating the application's URLs.
+
+`views.py` and `urls.py` are related and `<app name>/urls.py` is related with `<project name>/urls.py`. Exemplo below:
+
+![App Map Detailed](./markdown_imgs\app_details.png)
+
+***P.S:** To connect with the front-end, in `views.py`, we can add `.html` files that are linked to your system's logic.*
+
+### Database
+
+As I said earlier, at `setting.py` we can configure your database and, by doing this, we upgrade your website to something that can save, delete, show, and update data.
+
+![Database integration](./markdown_imgs\data_base_integration.png)
+
+Once you've integrated your application with a database, we need to update `models.py` this file helps us to communicate with your database, without using SQL, just by using Python.
+
+It's only possible because Django has an API that interacts with database for us.
+
+### The End
+
+Finally, to conclude your map, we need to talk about the "Admin Interface", this interface helps the admin of your site to add data, and update stuff in there. This is important because not always the admin is a programmer, so it is easier to administrate the application.
+
+![Admin Interface](./markdown_imgs\admin_interface.png)
+
+So let's take a look at the full map of your project:
+
+![Full View Detailed](./markdown_imgs\full_view_details.png)
+
 ## Starting the environment
 
 After installing Django using `pip install django`. It's necessary to start a project WITH Django by inserting in the terminal the command below:
@@ -164,7 +215,5 @@ python manage.py migrate
 ```
 
 **MIGRATE** is a command that submits our table to the database server.
-
-## asd
 
 🧐❗💥💥TO BE CONTINUED💥💥❗🧐
