@@ -31,7 +31,7 @@ Creating an APP will generate a folder with the name you provided for the APP. I
 
 ![App Map Detailed](./markdown_imgs\app_details.png)
 
-***P.S:** To connect with the front-end, in `views.py`, we can add `.html` files that are linked to your system's logic.*
+**\*P.S:** To connect with the front-end, in `views.py`, we can add `.html` files that are linked to your system's logic.\*
 
 ### Database
 
@@ -215,5 +215,76 @@ python manage.py migrate
 ```
 
 **MIGRATE** is a command that submits our table to the database server.
+
+## URL & Views
+
+Now, let's talk about URLs and Views. So... What is a URL at Django?
+
+At Django, a **URL** is the name_path you what to specify where the user can access a view.
+
+At Django, a **View** is the logic you what your webpage to have. It always needs a request and always returns something. Views have one mandatory parameter, and that parameter is the request. To exist a view only needs a request.
+
+After the request it needs to return, Django doesn't know what to do with the view if it returns nothing. The return can be an HTML file.
+
+## HTML with Django
+
+To include an HTML file on a page, we go to the `urls.py` of the package you are coding and introduce a path in the list `urlpatterns`.
+
+In there, you include the path to the view. Example below:
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.helloWorld), # this is the first page you get into the site (because the URL is empty)
+    path('task-list/', views.taskList, name="task-list"),
+   #path('url','view of the page', 'name')
+    path('yourname/<str:name>', views.yourname, name="yourname"),
+]
+```
+
+***P.S**: The first path I brought to you is the main page you will get into, because the URL is empty, is the same as you type "https://www.instagram.com/" instead of "https://www.instagram.com/username".*
+
+_The other URLs, if you want to access it immediately you type https://www.MYSITE.com/task-list (as I did above)_.
+
+After inserting the path go to the `views.py`, from the package your coding, and in the add:
+
+```python
+def taskList(request):
+    return render(request, 'task/list.html')
+                           # HTML file path here
+
+def yourname(request, name):
+    return render(request, 'task/yourname.html', {'name': name})
+                            # HTML file path here
+```
+You store your HTML files in a folder named "templates" in the package you are working at. Example:
+
+![HTML store](./markdown_imgs/html_templates.png)
+
+But it would be tiring if we needed to create a new HTML and CSS (and JavaScript) file every time we created a new template, so Django provides us a feature that allows us to standardize the page, it would be something like "a template for the template"
+
+## CSS and JS Django
+
+To add a CSS and/or JS links to the template HTML, we need to create folders, the first is static (it must be this name, to Django recognize it), and inside it create others whose names are "CSS" and "js", in there you'll put all your respective files. To "import" it to your HTML template just enable the HTML load static files by doing this (at your base_template.html):
+
+```html
+{% load static %} <!-- enable load static files -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" /> <!-- linking css file -->
+  </head>
+  <body>
+    <p>Barra de Navegação</p>
+    {% block content %} {% endblock %}
+    <p>Rodapé de página</p>
+    <script src="{% static 'js/main.js' %}"></script> <!-- linking js file -->
+  </body>
+</html>
+```
 
 🧐❗💥💥TO BE CONTINUED💥💥❗🧐
