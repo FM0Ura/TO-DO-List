@@ -1,0 +1,27 @@
+.container-fluid {
+  padding: 0%;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background-color: aqua;
+  border-bottom: 1px solid #333;
+  margin-bottom: 20px;
+}
+.navbar-nav {
+  margin: auto;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav a.navbar-link {
+  color: #333;
+  letter-spacing: 1px;
+}
+
+h1 {
+  color: blueviolet;
+}
